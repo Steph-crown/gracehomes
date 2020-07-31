@@ -114,10 +114,10 @@ locations = [
 				"Ibeju Agbe town, Ibeju-Lekki",
 				""
 			]
-for (var i=0; i<=29; ++i) {
+for (var i=0; i<=35; ++i) {
   markup += "<div><img src='" + i + ".jpg'>" +
   				"<div class='texts'>"+
-  				"<p><i class='fa fa-map-marker'></i> " + locations[i] + " <p>" +
+  				"<p><i class='fa fa-map-marker'></i> " + (locations[i]?locations[i]:"") + " <p>" +
   				"</div>" +
   			"</div>"
 }
