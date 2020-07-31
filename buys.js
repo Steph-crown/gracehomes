@@ -123,7 +123,7 @@ buys = [
 		    "With Urban Prime Two, we welcome you to taste the finer side of home.<br>"+
 		    "Urban Prime Two: Own Something Timeless....*"
 		 },
-		 { 
+		{ 
 		    name:"Gracias Sunstone Residence",
 		    img:"f5.jpg",
 		    locate:"Ibeju-Lekki, Lagos",
@@ -172,7 +172,7 @@ buys = [
 		    "<li>Pan African University</li>"+
 		    "<li>LA campaigne Tropicanal Resort</li>"+
 		    "And other several gated estates.<br>"+
-		    "For more information and inquiries ☎️ XXXXXXXXXXX"
+		    "For more information and inquiries ☎️ 08137040985"
 		  },
 		  {
 		    name:"Berry Court",
@@ -203,7 +203,63 @@ buys = [
 		    "Remember the good things don’t stay long in the market.<br>"+
 		    "You only have now. Time doesn’t wait, when time runs the value follows, when the value increases the price skyrockets and finally it gets sold out. So the best time for you to make the call is now.<br>"+
 		    "Indulge—in so much excitement, for so little!"
-		  }
+		  },
+		  {
+		    name:"WESTBURY HOMES BOGIJE",
+		    img:"46.jpg",
+		    locate:"Beechwood estate bogije ibeju lekki Lagos.",
+		    text:"The prestigious Westbury Homes Bogije has been set to cater for families, individuals and investors by providing a premium community in Lagos with distinguished facilities, standard infrastructures and so much more.<br>"+
+		  	"Westbury Homes located inside Beechwood estate bogije ibeju lekki Lagos. This location is set to enjoy significant growth over the next 5 years upon completion of a number of key infrastructure projects including"+
+		  	" the new Lekki-Epe Expressway Expansion, the Free Trade Zone, the new Lagos International Airport and the deep seaport.<br>"+
+		    "<b>Title: C of O</b><br>"+
+		    "<em>Size &nbsp; &nbsp; Prices</em>"+
+		  	"<li>300 sqm &nbsp; &nbsp; N6,700,000</li>"+           
+		  	"<li>450 sqm &nbsp; &nbsp; N9,700,000</li>"+
+		  	"<li>600 sqm &nbsp; &nbsp; N12,700,000</li>"+
+		  	"Payment is all inclusive."+
+		  	"Instant Physical Allocation<br>"+
+		  	"<b>NEIGHBOURHOOD</b>"+
+		  	"<li>Adiva Plainfield </li>"+
+		  	"<li>Lakowe Golf </li>"+
+		  	"<li>Mayfair gardens </li>"+
+		  	"<li>Corona school </li>"+
+		  	"<li>Greenspring schools</li>"+
+		  	"<li>Lufasi Nature Park</li>"+
+		  	"<li>Omu resort </li>"+
+		  	"<li>Fara park</li>"+
+		  	"<li>Novare mall Shoprite</li>"+
+		  	"<b>FEATURES</b>"+
+		  	"<li>Perimeter fence with Gated environment </li>"+
+		  	"<li>Potable water </li>"+
+		  	"<li>Boundary Cameras</li>"+
+		  	"<li>Interlocked road network </li>"+
+		  	"<li>Fire fighting system </li>"+
+		  	"<li>Playground for kids</li>"+
+		  	"<li>24/7 Uniform security. </li>"+
+		  	"For more details call/whatsapp 08137040985"
+		 },
+		 {
+		 name:"SIGNATURE LUXURY APARTMENT AND PENTHOUSE",
+		 img:"f5.jpg",
+		 locate:"Green Park Scheme, Abijo.",
+		 text:"This is to inform you that fencing and compartment is ongoing at the Signature, Abijo.<br>"+
+		 "You would love to see the development on the site.<br>"+
+		 "We will keep you updated on our subsequent developments at the Signature, Abijo"+
+		 "<br><b>Price</b><br>"+
+		 "Bedroom Investors Package - Pay N37,000,000 (Outright) & resell at N47,000,000 at completion in 9 months time."+
+		 "<br><b>Other Payment Options</b><br>"+
+		 "<em>3 Months - N40,350,000</em>"+
+		 "<em>6 Months - N43,750,000</em>"+
+		 "<em>12 Months - N45,750,000</em>"+
+		 "<em>18 Months - N47,950,000</em><br>"+
+		 "<b>Also Available...</b><br>"+
+		 "<li>2 Bedroom Apartment with BQ N25,000,000</li>"+
+		 "<li>3 Bedroom Terrace with BQ N35,000,000</li>"+
+		 "<li>3 Bedroom Penthouse N38,000,000</li>"+
+		 "<li>Down Payment : N3,000,000</li>"+
+		 "Project delivery period is 9 months.<br>"+
+		 "For more information and payment details call/whatsapp 08137040985"
+		}
 		]
 buyMarkup = ""
 for (var i of buys) {	  
@@ -238,3 +294,17 @@ function viewMore(i) {
 }
 _ = i => {spans[i].addEventListener('click', function(){viewMore(i)}, false)};
 for (var i = 0; i<spans.length; i++) _(i);
+
+function talksAbout(node, string) {
+if (node.nodeType == Node.ELEMENT_NODE) {
+for (let i = 0; i < node.childNodes.length; i++) {
+if (talksAbout(node.childNodes[i], string)) {
+return true;
+}
+}
+return false;
+} else if (node.nodeType == Node.TEXT_NODE) {
+return node.nodeValue.indexOf(string) > -1;
+}
+}
+console.log(talksAbout(document.body, "Latest Properties"));
